@@ -8,6 +8,7 @@ import { CalendarSendComponent } from './calendar-send.component';
   declarations: [CalendarSendComponent],
   imports: [
     CommonModule
-  ]
+  ],
+  exports : [CalendarSendComponent],
 })
 export class CalendarSendModule { }
