@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CalendarSendModule } from './@components/calendar-send/calendar-send.module';
 import { EventosAdminModule } from './@components/eventos-admin/eventos-admin.module';
+import { EventosUpdateModule } from './@components/eventos-update/eventos-update.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,7 +15,8 @@ import { EventosAdminModule } from './@components/eventos-admin/eventos-admin.mo
     BrowserModule,
     AppRoutingModule,
     CalendarSendModule,
-    EventosAdminModule
+    EventosAdminModule,
+    EventosUpdateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
