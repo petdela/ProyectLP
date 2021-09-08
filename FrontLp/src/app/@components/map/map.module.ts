@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CalendarSendComponent } from './calendar-send.component';
+import { MapComponent } from './map.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 
 
 
 
 @NgModule({
-  declarations: [CalendarSendComponent],
+  declarations: [MapComponent],
   imports: [
     CommonModule,
     AppRoutingModule
   ],
-  exports : [CalendarSendComponent],
+  exports: [
+    MapComponent
+  ],
 })
-export class CalendarSendModule { }
+export class MapModule { }

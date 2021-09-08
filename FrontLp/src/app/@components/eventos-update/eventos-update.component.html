@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-<div class="contenedor bg-primary">
+<div class="contenedor bg-secondary bg-gradient">
   <div class="row justify-content-md-center">
     <div class="col col-md-6">
       <div class="card text-center">
@@ -7,17 +7,9 @@
           <h1>Modificar un Evento</h1>
         </div>
         <div class="card-body">
-          <form action="http://localhost/Proyecto/insertar.php" method="post">
+          <form action="http://localhost/Proyecto/actualizar.php" method="POST">
             <div class="form-group text-left">
-              <label for="categoriaId" class="lab col-md-12">Evento</label>
-            <!--input id ="categoriaId" name="categoriaId" class="form-control" type="text" placeholder="Categoria del Evento"-->
-            <select class="form-control form-select-lg mb-3" aria-label=".form-select-lg example">
-              <option selected>GYETECH: Clojure la ciencia de lo simple</option>
-              <!--option value="1">Entretenimiento</option>
-              <option value="2">Arte</option>
-              <option value="3">Musica</option>
-              <option value="4">Tecnología</option-->
-            </select>
+            <input id ="id" name="id" class="form-control" type="hidden">
           </div>
             <div class="form-group text-left">
               <label for="nombre">Nombre</label>
@@ -37,13 +29,12 @@
             </div>
             <div class="form-group text-left">
                 <label for="categoriaId" class="lab col-md-12">Categoria</label>
-              <!--input id ="categoriaId" name="categoriaId" class="form-control" type="text" placeholder="Categoria del Evento"-->
-              <select class="form-control form-select-lg mb-3" aria-label=".form-select-lg example">
+              <select name="categoriaId" id="categoriaId" class="form-control form-select-lg mb-3" aria-label=".form-select-lg example">
                 <option selected>Open this select menu</option>
-                <option value="1">Entretenimiento</option>
-                <option value="2">Arte</option>
-                <option value="3">Musica</option>
-                <option value="4">Tecnología</option>
+                <option id="1" value="1">Entretenimiento</option>
+                <option id="2" value="2">Arte</option>
+                <option id="3" value="3">Musica</option>
+                <option id="4" value="4">Tecnología</option>
               </select>
             </div>
             <div class="form-group text-left">
@@ -51,7 +42,7 @@
               <input id ="usuarioId" name="usuarioId" type="hidden" class="form-control" placeholder="Id del usuario" value="1">
             </div>
             <div class="form-group text-right">
-                <button type="submit" class="btn btn-primary" id="enviar">Modificar</button>
+                <button type="submit" class="btn btn-success" id="enviar">Modificar</button>
             </div>
         </form>
         </div>
