@@ -38,6 +38,7 @@ export class MapComponent implements OnInit {
   .then(res => res.json())
   .then(res => {
     for (let i = 0; i < res.length; i++) {
+      console.log(res);
       let startIndx = res[i].ubicacion.search("@");
       let commaIndx = startIndx + res[i].ubicacion.slice(startIndx, -1).search(",", startIndx+1);
       let latlong = res[i].ubicacion.slice(startIndx+1, commaIndx+res[i].ubicacion.slice(commaIndx+2,-1).search(",",commaIndx+2))
@@ -62,3 +63,4 @@ export class MapComponent implements OnInit {
   }
 
 }
+
