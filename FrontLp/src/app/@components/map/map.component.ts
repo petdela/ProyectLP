@@ -31,41 +31,10 @@ export class MapComponent implements OnInit {
       tileSize: 512,
       zoomOffset: -1,
       accessToken: 'your.mapbox.access.token'
-<<<<<<< HEAD
-  }).addTo(mymap);
-
-  var marker = L.marker([-2.180061, -79.9053203]).addTo(mymap);
-  marker.bindPopup(`
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h3 class="card-title"><b>GYE TECH: Clojure, la ciencia de lo simple.</b></h3>
-      <h6 class="card-subtitle"><b>Tecnología</b> - 5/09/2021</h6>
-      <p class="card-text">Tercera charla de la iniciativa Guayaquil tech. Una oportunidad de conocer nuevas tecnologías de de mejorar la red de contactos conectando y convocando a grandes desarrolladores de la ciudad de Guayaquil</p>
-      <a href="http://localhost:4200/calendar/1" class="btn btn-success" style="width:100%; color:white;">Agregar al calendario</a>
-      <a href="http://localhost:4200/eventos/update/1" class="btn btn-secondary" style="width:100%; color:white;">Editar Evento</a>
-    </div>
-  </div>
-  `).openPopup();
-
-
-  var marker = L.marker([-2.1552202, -79.8948806]).addTo(mymap);
-  marker.bindPopup(`
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h3 class="card-title"><b>Fiesta destructiva en casa de Robert</b></h3>
-      <h6 class="card-subtitle"><b>Entretenimiento</b> - 5/09/2021</h6>
-      <p class="card-text">Cansado y estresado por el semestre? <br> Te fue bien en los examenes? Ven y celebra con nosotros <br> Te fue mal en los examenes? Ven y llora con nosotros.  </p>
-      <button class="btn btn-success" style="width:100%">Agregar al calendario</button>
-      <button class="btn btn-secondary" style="width:100%">Editar Evento</button>
-    </div>
-  </div>
-  `).openPopup();
-=======
   }).addTo(mymap);    
   
->>>>>>> 5df15fabfba5c82890800e6006bf17c50d07f238
 
-  fetch(`http://localhost:8000/get_eventos`)
+  fetch(`http://localhost/Proyecto/getSebas.php`)
   .then(res => res.json())
   .then(res => {
     for (let i = 0; i < res.length; i++) {
@@ -81,7 +50,8 @@ export class MapComponent implements OnInit {
           <h3 class="card-title"><b>${res[i].nombre}</b></h3>
           <h6 class="card-subtitle"><b>${res[i].categoria}</b> - 5/09/2021</h6>
           <p class="card-text">${res[i].descripcion} </p>
-          <a href="#" class="btn btn-success">Agregar a mi calendario</a>
+          <a href=http://localhost:4200/calendar/${res[i].id} class="btn btn-success"  style="width:100%; color:white;">Agregar a mi calendario</a>
+          <a href="http://localhost:4200/eventos/update/${res[i].id}" class="btn btn-secondary" style="width:100%; color:white;">Editar Evento</a>
         </div>
       </div>
     `).openPopup();
