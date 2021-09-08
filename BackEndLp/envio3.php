@@ -1,36 +1,39 @@
 <?php 
-        $servidor = 'localhost:3307';
-        $usuario = 'root';
-        $contrasena = '';
-        $base = 'baselp';
+        include('./config/conexion.php');
+        $sql = "SELECT * FROM evento";
 
-        $link = mysqli_connect($servidor,$usuario,$contrasena,$base);
- 
-        if($link === false){
-            die("ERROR: Could not connect. " . mysqli_connect_error());
-        }
- 
-        //echo "Connect Successfully. Host info: " . mysqli_get_host_info($link)."\n";
-
-        $sql = "SELECT * FROM evento WHERE usuarioId = 1";
-        $retval = mysqli_query( $link, $sql );
+        //$sql = "SELECT * FROM evento WHERE usuarioId = 1";
+        $retval = mysqli_query( $conn, $sql );
+        $idE=$_GET["id"];
+        $dest=$_POST["correo"];
+        $nombreE="";
+        $ubi="";
+        $desc="";
+        $fec="";
+        $cat="";
         if(! $retval ){
-            //echo "No se ha mostrar el evento asociado\n";
             die('Could not enter data: '  .mysqli_error($link));
         }else{
             while($row = $retval->fetch_assoc()){
-                echo "Datos del eventos que asistes:";
                 echo $row['id'] ." " .$row['nombre'] ." " .$row['ubicacion'] ." " .$row['descripcion'] ." " .$row['fecha'] ." " .$row['categoriaId'] ." " .$row['usuarioId'] ."\n";
+                
+                if($row['id']==$idE){
+                    $nombreE= $row['nombre'];
+                    $ubi= $row['ubicacion'];
+                    $desc=$row['descripcion'];
+                    $fec =$row['fecha'];
+                    $cat=$row['categoriaId'];
+                }
             }
-            //echo "Numero de eventos que asistes es: " . $retval -> num_rows."\n";
-            //echo "Evento:".$retval."\n";
+            echo "Eventos consultados con exito!!!\n";
         }
-        mysqli_close($link);
+        mysqli_close($conn);
     
 
 
-        $destinatario = "petdela@espol.edu.ec"; 
-        $asunto = "Este mensaje es de prueba"; 
+        //$destinatario = "petdela@espol.edu.ec";
+        $destinatario = $dest;
+        $asunto = "Evento de calendario"; 
         $cuerpo = ' 
         <html> 
         <head> 
