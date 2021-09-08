@@ -7,6 +7,7 @@ import { CalendarSendModule } from './@components/calendar-send/calendar-send.mo
 import { EventosAdminModule } from './@components/eventos-admin/eventos-admin.module';
 import { MapComponent } from './@components/map/map.component';
 import { NavbarComponent } from './@components/navbar/navbar.component';
+import { EventosUpdateModule } from './@components/eventos-update/eventos-update.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { NavbarComponent } from './@components/navbar/navbar.component';
     AppRoutingModule,
     CalendarSendModule,
     EventosAdminModule,
+    EventosUpdateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

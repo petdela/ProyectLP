@@ -1,15 +1,13 @@
 
 body {
-    background: #F8A434;
     font-family: 'Lato', sans-serif;
-    color: #FDFCFB;
     text-align: center;
   }
   
   
   form {
     width: 450px;
-    margin: 17% auto;
+    /*margin: 17% auto;*/
   }
   
   
